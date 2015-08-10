@@ -1,0 +1,17 @@
+appcleaner
+firefox
+google-chrome
+keepassx
+libreoffice
+macvin
+pycharm-ce
+dwarf-fortress
+vlc
+wireshark
+tunnelblick
+transmission
+skype
+yubikey-personalization-gui
+xquartz
+virtualbox
+cyberduck

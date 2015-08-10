@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Enabling MacOS preferences"
+source ./macosx_setup.sh
+
 echo "Installing command line tools"
 xcode-select --install
 
@@ -9,16 +12,25 @@ echo "Installing homebrew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing brew packages"
-brew install caskroom/cask/brew-cask ansible htop-osx wine python3 python go
+while read line
+do
+    brew install ${line}
+done < brew.txt
 
 echo "Install cask packages"
-brew cask install appcleaner firefox google-chrome keepassx libreoffice macvin pycharm-ce dwarf-fortress vlc wireshark tunnelblick transmission skype yubikey-personalization-gui xquartz virtualbox cyberduck
+while read line
+do
+    brew cask install ${line}
+done < brew_cask.txt
 
 echo "Upgrading pip"
 pip3 install --upgrade pip
 
 echo "Installing python3 packages"
-pip3 install pelican MarkDown Pygments youtube-dl you-get pandas cython
+while read line
+do
+    pip3 install ${line}
+done < brew_cask.txt
 
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"

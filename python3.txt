@@ -1,0 +1,7 @@
+pelican
+MarkDown
+Pygments
+youtube-dl
+you-get
+pandas
+cython

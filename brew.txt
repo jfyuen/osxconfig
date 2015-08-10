@@ -1,0 +1,7 @@
+caskroom/cask/brew-cask
+ansible
+htop-osx
+wine
+python3
+python
+go
