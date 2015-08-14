@@ -3,7 +3,7 @@ firefox
 google-chrome
 keepassx
 libreoffice
-macvin
+macvim
 pycharm-ce
 dwarf-fortress
 vlc

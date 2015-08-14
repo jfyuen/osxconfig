@@ -2,8 +2,10 @@
 
 set -e
 
+CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 echo "Enabling MacOS preferences"
-source ./macosx_setup.sh
+source ${CURRENT_DIR}/macosx_setup.sh
 
 echo "Installing command line tools"
 xcode-select --install
@@ -35,3 +37,5 @@ done < brew_cask.txt
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
 open /Applications/App\ Store.app
+
+echo "TODO: install vim"
