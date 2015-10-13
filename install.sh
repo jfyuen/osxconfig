@@ -38,4 +38,8 @@ echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
 open /Applications/App\ Store.app
 
+echo "Set up clamav and update"
+echo "DatabaseMirror database.clamav.net" > /usr/local/etc/clamav/freshclam.conf
+freshclam -v
+
 echo "TODO: install vim"

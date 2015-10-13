@@ -5,3 +5,4 @@ wine
 python3
 python
 go
+clamav
