@@ -21,6 +21,10 @@ do
     brew install ${line}
 done < brew.txt
 
+echo "Linking to homebrew apps in ~/Applications"
+mkdir -p ~/Applications
+brew linkapps --local
+
 echo "Install cask packages"
 while read line
 do

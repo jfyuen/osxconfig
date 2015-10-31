@@ -3,8 +3,8 @@ firefox
 google-chrome
 keepassx
 libreoffice
-macvim
 pycharm-ce
+intellij-idea-ce
 dwarf-fortress
 vlc
 wireshark
