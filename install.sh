@@ -10,8 +10,10 @@ source ${CURRENT_DIR}/macosx_setup.sh
 echo "Installing command line tools"
 xcode-select --install
 
-echo "Installing homebrew"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo "Installing homebrew in /opt/homebrew"
+sudo mkdir /opt/homebrew
+sudo chown $(whoami):admin /opt/homebrew
+curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /opt/homebrew
 
 echo "Installing brew packages"
 while read line
@@ -32,14 +34,14 @@ echo "Installing python3 packages"
 while read line
 do
     pip3 install ${line}
-done < brew_cask.txt
+done < python3.txt
 
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
 open /Applications/App\ Store.app
 
 echo "Set up clamav and update"
-echo "DatabaseMirror database.clamav.net" > /usr/local/etc/clamav/freshclam.conf
+echo "DatabaseMirror database.clamav.net" > /opt/homebrew/etc/clamav/freshclam.conf
 freshclam -v
 
 echo "Install vimconfig"
