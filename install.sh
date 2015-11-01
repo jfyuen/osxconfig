@@ -48,10 +48,11 @@ echo "Set up clamav and update"
 echo "DatabaseMirror database.clamav.net" > /opt/homebrew/etc/clamav/freshclam.conf
 freshclam -v
 
-echo "Install vimconfig"
-git clone https://github.com/jfyuen/vimconfig ~/Documents/github/vimconfig
-ln -s  ~/Documents/github/vimconfig/vimrc ~/.vimrc
-ln -s  ~/Documents/github/vimconfig/vim ~/.vim
+VIMDIR=${CURRENT_DIR}/../vimconfig
+echo "Install vimconfig in ${VIMDIR}"
+git clone https://github.com/jfyuen/vimconfig ${VIMDIR}
+ln -s  ${VIMDIR}/vimrc ~/.vimrc
+ln -s  ${VIMDIR}/vim ~/.vim
 mkdir ~/.tmp
-(cd  ~/Documents/github/vimconfig && git submodule init && git submodule update)
+(cd  ${VIMDIR} && git submodule init && git submodule update)
 
