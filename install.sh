@@ -52,6 +52,9 @@ ln -s  ${VIMDIR}/vim ~/.vim
 mkdir ~/.tmp
 (cd  ${VIMDIR} && git submodule init && git submodule update)
 
+echo "Setting up bashrc"
+ln -s ${CURRENT_DIR}/bashrc ~/.bashrc
+
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
 open /Applications/App\ Store.app
