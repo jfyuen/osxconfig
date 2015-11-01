@@ -40,10 +40,6 @@ do
     pip3 install ${line}
 done < python3.txt
 
-echo "Base system finished installing"
-echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
-open /Applications/App\ Store.app
-
 echo "Set up clamav and update"
 echo "DatabaseMirror database.clamav.net" > /opt/homebrew/etc/clamav/freshclam.conf
 freshclam -v
@@ -55,4 +51,8 @@ ln -s  ${VIMDIR}/vimrc ~/.vimrc
 ln -s  ${VIMDIR}/vim ~/.vim
 mkdir ~/.tmp
 (cd  ${VIMDIR} && git submodule init && git submodule update)
+
+echo "Base system finished installing"
+echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
+open /Applications/App\ Store.app
 
