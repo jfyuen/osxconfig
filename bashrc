@@ -12,10 +12,10 @@ umask 022
 export PS1='\[\033[1;33m\]\u@\h \[\033[01;34m\]\W \$ \[\033[00m\]'
 
 # PATH
-export PATH=$PATH:/opt/homebrew/bin
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 export GOPATH=~/go
-export PATH=$PATH:/opt/homebrew/opt/go/libexec/bin
-export PATH=$PATH:$GOPATH/bin
+export PATH=/opt/homebrew/opt/go/libexec/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # Global settings
 set -o notify
