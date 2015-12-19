@@ -3,6 +3,7 @@
 set -e
 
 CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+BREW_DIR=/opt/homebrew
 
 echo "Enabling MacOS preferences"
 source ${CURRENT_DIR}/macosx_setup.sh
@@ -10,10 +11,11 @@ source ${CURRENT_DIR}/macosx_setup.sh
 echo "Installing command line tools"
 xcode-select --install
 
-echo "Installing homebrew in /opt/homebrew"
-sudo mkdir /opt/homebrew
-sudo chown $(whoami):admin /opt/homebrew
-curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /opt/homebrew
+echo "Installing homebrew in ${BREW_DIR}"
+sudo mkdir -p ${BREW_DIR}
+sudo chown $(whoami):admin ${BREW_DIR}
+curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C ${BREW_DIR}
+PATH=${BREW_DIR}:$PATH
 
 echo "Installing brew packages"
 while read line
@@ -41,7 +43,7 @@ do
 done < python3.txt
 
 echo "Set up clamav and update"
-echo "DatabaseMirror database.clamav.net" > /opt/homebrew/etc/clamav/freshclam.conf
+echo "DatabaseMirror database.clamav.net" > ${BREW_DIR}/etc/clamav/freshclam.conf
 freshclam -v
 
 VIMDIR=${CURRENT_DIR}/../vimconfig
