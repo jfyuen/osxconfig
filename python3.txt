@@ -1,5 +1,3 @@
-pelican
-MarkDown
 Pygments
 youtube-dl
 you-get

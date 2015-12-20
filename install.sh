@@ -42,6 +42,12 @@ do
     pip3 install ${line}
 done < python3.txt
 
+echo "Installing ruby packages"
+while read line
+do
+    gem install ${line}
+done < ruby.txt
+
 echo "Set up clamav and update"
 echo "DatabaseMirror database.clamav.net" > ${BREW_DIR}/etc/clamav/freshclam.conf
 freshclam -v
