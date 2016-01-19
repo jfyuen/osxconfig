@@ -27,6 +27,12 @@ echo "Linking to homebrew apps in ~/Applications"
 mkdir -p ~/Applications
 brew linkapps --local
 
+echo "Install brew taps"
+while read line
+do
+    brew tap ${line}
+done < brew_tap.txt
+
 echo "Install cask packages"
 while read line
 do
