@@ -4,7 +4,7 @@
 # This script comes from https://gist.github.com/2260182
 #
 # This is script with usefull tips taken from:
-#   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+#   https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 #
 
 echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
@@ -19,6 +19,12 @@ defaults write com.apple.dock autohide -bool true
 echo "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
 
+echo "Disable auto-correct"
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+echo "Disable auto-saving"
+defaults write -g ApplePersistence -bool no
+
 echo "Show all filename extensions in Finder"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -30,6 +36,12 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 echo "Show Status bar in Finder"
 defaults write com.apple.finder ShowStatusBar -bool true
+
+echo "Display full POSIX path as Finder window title"
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+echo "When performing a search, search the current folder by default"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 echo "Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
