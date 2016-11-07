@@ -1,4 +1,4 @@
-caskroom/cask/brew-cask
+openssl
 ansible
 htop-osx
 wine

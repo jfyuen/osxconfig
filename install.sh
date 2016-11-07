@@ -13,19 +13,12 @@ xcode-select --install
 
 echo "Installing homebrew in ${BREW_DIR}"
 sudo mkdir -p ${BREW_DIR}
-sudo chown $(whoami):admin ${BREW_DIR}
-curl -L http://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C ${BREW_DIR}
-PATH=${BREW_DIR}:$PATH
+sudo chown -R $(whoami):admin ${BREW_DIR}
+curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ${BREW_DIR}
+PATH=${BREW_DIR}/bin:$PATH
 
-echo "Installing brew packages"
-while read line
-do
-    brew install ${line}
-done < brew.txt
-
-echo "Linking to homebrew apps in ~/Applications"
-mkdir -p ~/Applications
-brew linkapps --local
+echo "Updating homebrew"
+brew update
 
 echo "Install brew taps"
 while read line
@@ -38,6 +31,16 @@ while read line
 do
     brew cask install ${line}
 done < brew_cask.txt
+
+echo "Installing brew packages"
+while read line
+do
+    brew install ${line}
+done < brew.txt
+
+echo "Linking to homebrew apps in ~/Applications"
+mkdir -p ~/Applications
+brew linkapps --local
 
 echo "Upgrading pip"
 pip3 install --upgrade pip
@@ -68,6 +71,7 @@ mkdir ~/.tmp
 
 echo "Setting up bashrc"
 ln -s ${CURRENT_DIR}/bashrc ~/.bashrc
+ln -s ${CURRENT_DIR}/bashrc ~/.bash_profile
 
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
