@@ -11,11 +11,13 @@ libreoffice
 macvim
 pycharm-ce
 skype
+steam
 transmission
 tunnelblick
 virtualbox
 visual-studio-code
 vlc
+wine
 wireshark
 xquartz
 yubikey-personalization-gui

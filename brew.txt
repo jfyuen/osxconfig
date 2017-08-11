@@ -1,7 +1,6 @@
 openssl
 ansible
 htop-osx
-wine
 python3
 python
 go
