@@ -69,9 +69,9 @@ ln -s  ${VIMDIR}/vim ~/.vim
 mkdir ~/.tmp
 (cd  ${VIMDIR} && git submodule init && git submodule update)
 
-echo "Setting up bashrc"
-ln -s ${CURRENT_DIR}/bashrc ~/.bashrc
-ln -s ${CURRENT_DIR}/bashrc ~/.bash_profile
+echo "Setting up zsh""
+bash install_zsh.sh
+ln -s ${CURRENT_DIR}/zshrc ~/.zshrc
 
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
