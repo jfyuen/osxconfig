@@ -1,8 +1,4 @@
-openssl
-ansible
 htop-osx
 python3
-python
 go
 clamav
-ruby

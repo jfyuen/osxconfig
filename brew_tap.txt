@@ -1,2 +1,2 @@
-caskroom/cask
-caskroom/versions
+homebrew/homebrew-cask
+homebrew/cask-versions

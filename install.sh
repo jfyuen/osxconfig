@@ -38,10 +38,6 @@ do
     brew install ${line}
 done < brew.txt
 
-echo "Linking to homebrew apps in ~/Applications"
-mkdir -p ~/Applications
-brew linkapps --local
-
 echo "Upgrading pip"
 pip3 install --upgrade pip
 
@@ -50,12 +46,6 @@ while read line
 do
     pip3 install ${line}
 done < python3.txt
-
-echo "Installing ruby packages"
-while read line
-do
-    gem install ${line}
-done < ruby.txt
 
 echo "Set up clamav and update"
 echo "DatabaseMirror database.clamav.net" > ${BREW_DIR}/etc/clamav/freshclam.conf
@@ -69,11 +59,12 @@ ln -s  ${VIMDIR}/vim ~/.vim
 mkdir ~/.tmp
 (cd  ${VIMDIR} && git submodule init && git submodule update)
 
-echo "Setting up zsh""
+echo "Setting up zsh"
 bash install_zsh.sh
+rm -f ~/.zshrc
 ln -s ${CURRENT_DIR}/zshrc ~/.zshrc
 
 echo "Base system finished installing"
-echo "Now install the following from the Appstore: XCode, Microsoft Remote Desktop"
+echo "Now install the following from the Appstore: Slack, Ghostery Lite (from Safari Extensions)"
 open /Applications/App\ Store.app
 
