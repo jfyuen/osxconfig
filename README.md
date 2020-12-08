@@ -6,9 +6,9 @@ Not generic run once script, debug manually.
 
 ## Installation
 
-Homebrew will be installed in `/opt/homebrew` for ease of use and because of SIP.
+The Homebrew x86 version will be installed in `/opt/xhomebrew` for ease of use and because of SIP.
 
-Run the install script: 
+Run the install script:
 ```sh
 $ ./install.sh
 ```
