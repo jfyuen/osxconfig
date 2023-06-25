@@ -42,10 +42,6 @@ do
     pip3 install ${line}
 done < python3.txt
 
-echo "Set up clamav and update"
-echo "DatabaseMirror database.clamav.net" > ${BREW_DIR}/etc/clamav/freshclam.conf
-freshclam -v
-
 VIMDIR=${CURRENT_DIR}/../vimconfig
 echo "Install vimconfig in ${VIMDIR}"
 git clone https://github.com/jfyuen/vimconfig ${VIMDIR}
