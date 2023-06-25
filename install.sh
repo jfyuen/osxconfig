@@ -3,19 +3,14 @@
 set -e
 
 CURRENT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-BREW_DIR=/opt/xhomebrew  # For x86 version
-
 echo "Enabling MacOS preferences"
 source ${CURRENT_DIR}/macosx_setup.sh
 
 echo "Installing command line tools"
 xcode-select --install
 
-echo "Installing homebrew (x86) in ${BREW_DIR}"
-sudo mkdir -p ${BREW_DIR}
-sudo chown -R $(whoami):admin ${BREW_DIR}
-curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ${BREW_DIR}
-PATH=${BREW_DIR}/bin:$PATH
+echo "Installing homebrew (ARM)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Updating homebrew"
 brew update
@@ -29,7 +24,7 @@ done < brew_tap.txt
 echo "Install cask packages"
 while read line
 do
-    brew cask install ${line}
+    brew install --cask ${line}
 done < brew_cask.txt
 
 echo "Installing brew packages"

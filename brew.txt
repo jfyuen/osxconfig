@@ -1,4 +1,2 @@
 htop-osx
-python3
 go
-clamav

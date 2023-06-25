@@ -4,9 +4,4 @@ docker
 firefox
 google-chrome
 macvim
-skype
-steam
-transmission
 visual-studio-code
-vlc
-wireshark
