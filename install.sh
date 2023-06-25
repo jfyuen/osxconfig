@@ -61,5 +61,4 @@ ln -s ${CURRENT_DIR}/zshrc ~/.zshrc
 
 echo "Base system finished installing"
 echo "Now install the following from the Appstore: Slack, Ghostery Lite (from Safari Extensions)"
-open /Applications/App\ Store.app
 
