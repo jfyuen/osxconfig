@@ -33,15 +33,6 @@ do
     brew install ${line}
 done < brew.txt
 
-echo "Upgrading pip"
-pip3 install --upgrade pip
-
-echo "Installing python3 packages"
-while read line
-do
-    pip3 install ${line}
-done < python3.txt
-
 VIMDIR=${CURRENT_DIR}/../vimconfig
 echo "Install vimconfig in ${VIMDIR}"
 git clone https://github.com/jfyuen/vimconfig ${VIMDIR}
