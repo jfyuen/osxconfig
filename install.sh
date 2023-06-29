@@ -47,5 +47,5 @@ rm -f ~/.zshrc
 ln -s ${CURRENT_DIR}/zshrc ~/.zshrc
 
 echo "Base system finished installing"
-echo "Now install the following from the Appstore: Slack, Ghostery Lite (from Safari Extensions)"
+echo "Now install the following from the Appstore: Slack, Adguard for Safari (from Safari Extensions)"
 
